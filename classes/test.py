@@ -1,25 +1,33 @@
-class Restaurant:
+class Users:
 
-    def __init__(self, restaurant_name, cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
+    def __init__(self, first_name, last_name, verified, mail):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.verified = verified
+        self.mail = mail
     
-    def describe_restaurant(self):
-        print(self.restaurant_name, self.cuisine_type)
+
+    def describe_user(self):
+        print(f"{self.first_name} {self.last_name}\n{self.verified}\n{self.mail}")
+    
+
+    def greet_user(self):
+        print(f"Hello {self.first_name}")
 
 
-class IceCreamStand(Restaurant):  # Changed to class
+class Admin(Users):
 
-    def __init__(self, restaurant_name, cuisine_type):  # Added self parameter
-        super().__init__(restaurant_name, cuisine_type)  # Corrected super() call
-        self.flavors = ['strawberry', 'chocolate','vanilla','grapeberry']
-
-    def display_flavors(self):
-        """Displays ice-cream flavors available"""
-        print("We have: ", end = "")
-        for i in self.flavors:
-            print(i, end = " ")
-        print()
-
-trentIce = IceCreamStand("trentIce", "icecream")
-trentIce.display_flavors()
+    def __init__(self, first_name, last_name, verified, mail):
+        super().__init__(first_name, last_name, verified, mail)
+        self.privileges = ['can add post', 'can delete post', 'can ban user',
+                           'can shut down the network']
+        
+    def show_privileges(self):
+        print("PRIVILEGES ")
+        num = 1
+        for i in self.privileges:
+            print(num, " ", i)
+            num += 1
+    
+admin1 = Admin("daniel", "kaiend", True, "danielK.12@chimp.com")
+admin1.show_privileges()

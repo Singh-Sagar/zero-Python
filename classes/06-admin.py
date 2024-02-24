@@ -15,19 +15,26 @@ class Users:
         print(f"Hello {self.first_name}")
 
 
-class Admin:
+class Admin(Users):
 
     def __init__(self,first_name, last_name, verified, mail):
         super().__init__(first_name,last_name,verified, mail)
-        self.privileges = ['can add post', ' can delete post', 'can ban user',
-                           'can shut down the network']
-        
-    def show_privileges(self):
-        print("PRIVILEGES: ", end = "")
-        num = 1
-        for i in self.privilages:
-            print(num, " " , i)
-            num += 1
+        self.privileges = Privileges(['add users'])
+
+class Privileges:
+
+    def __init__(self, privileges=[] ):
+        self.privileges = privileges
     
+    def show_privileges(self):
+        print("\nPrivileges:")
+        if self.privileges:
+            for privilege in self.privileges:
+                print(f"- {privilege}")
+        else:
+            print("- This user has no privileges.")
+
+
+
 admin1 = Admin("daniel","kaiend",True, "danielK.12@chimp.com")
-admin1.show_privilages()
+admin1.privileges.show_privileges()
