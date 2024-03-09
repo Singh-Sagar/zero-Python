@@ -1,0 +1,8 @@
+In Python you can store variables to use them later.
+In Python you can loop through any iterable.
+In Python you can use primitive data types.
+In Python you can use complex data types like sets, lists, tuples and dicts.
+In Python you can create web apps using Django, Flask etc.
+In Python you can write backend of a webapp.
+In Python you can do machine learning.
+In Python you can do whatever you want.

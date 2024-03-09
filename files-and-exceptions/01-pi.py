@@ -7,5 +7,6 @@ counter = 0
 for line in lines:
     pi_string += line.strip() # clears any whitespace around the text
     
-print(f"{pi_string[:52]}...")
-print(len(pi_string))
+birthday = input("Enter your birthday, in the form mmddyy: ")
+if birthday in pi_string:
+    print("Your birthday appears in the first million digit of pi!")
