@@ -52,4 +52,3 @@ while True:
         file_add = save_fav_num()
     else:
         break
-
